@@ -1,0 +1,24 @@
+<h1> Files on this private bucket </h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>File</th>
+    <th>Last modified</th>
+  </tr>
+  % files.each do |file|
+    <tr>
+      <td><a target="_blank" href="/files/{{file.fetch(:key)}}">{{file.fetch(:key)}}</a></td>
+      <td>{{ file.fetch(:last_modified) }}</td>
+    </tr>
+  % end
+</table>
+
+<hr>
+<p>
+  As you can see, the links redirect you to a signed url in S3. These files
+  are not available to the public, but only through these signed urls I generate each time.
+</p>
+<p>
+  It's easy to see that this way we can limit access to the different files depending on the logged user, allowing access only to the owner of the file.
+</p>
+</hr>

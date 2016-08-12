@@ -1,0 +1,13 @@
+<!-- IMPORTANT:  FORM's enctype must be "multipart/form-data" -->
+<h1> File upload </h1>
+<p>
+Upload a file to S3 private bucket 
+<i>(I will refuse to upload files bigger than 10MB)</i>
+</p>
+<form method="post" action="/" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="filesToUpload">Files:</label>
+    <input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" />
+  </div>
+  <input type="submit">
+</form>
